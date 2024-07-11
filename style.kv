@@ -6,22 +6,35 @@
 
         MDTopAppBar:
             title: 'Weather.app'
-        #MDBoxLayout:
-                #padding: '20sp'
+            shadow_color: ("white")
+            md_bg_color: ("#87CEFA")
             
-        MDTextField:
-            hint_text: "Напишіть своє місто"
-            mode: "rectangle"
-            icon_left: "map-marker"
-        MDFloatingActionButton:
-            icon: "cloud"
-            md_bg_color: app.theme_cls.primary_color
+        MDBoxLayout:
+            padding: '20sp'
+            spacing: '10sp'
+            
+            MDTextField:
+                id: find_city
+                hint_text: "Напишіть своє місто"
+                mode: "rectangle"
+                icon_left: "map-marker"
+                radius: [10, 10, 10, 10]
+                pos_hint: {'center_y': 0.9}
+                
+            MDFloatingActionButton:
+                id: show
+                icon: "cloud"
+                md_bg_color: ("#87CEFA")
+                pos_hint: {'center_y': 0.88}
+                shadow_color: ("white")
+                on_press: root.searching()
 
 
                 
 
         
         MDLabel:
+            id: content
             text: 'Content'
             halign: 'center'
         
