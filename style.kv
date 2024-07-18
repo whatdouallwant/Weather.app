@@ -1,3 +1,53 @@
+<MyMDCard>:
+    padding: 4
+    size_hint: (0.9, 1)
+    pos_hint: {'center_x': 0.5}
+    MDBoxLayout:
+        size_hint: (1,1)
+        orientation: 'vertical'
+        padding: '10sp'
+        pos_hint: {'center_y': 0.5}
+        MDLabel:
+            id: time
+            text: "Зараз"
+            font_style: 'Body1'
+            halign: 'center'
+        AsyncImage:
+            id: image
+            source: ('https://openweathermap.org/img/wn/10d@2x.png')
+            size: ('300sp', '300sp')
+            fit_mode: 'contain'
+            pos_hint: {'center_x': 0.73}
+        MDLabel:
+            id: curr_temp
+            text: "temp"
+            font_style: 'H2'
+            pos_hint: {'center_x': 0.73}
+            halign: 'center'
+        MDLabel:
+            id: feelslike
+            text: "feeling"
+            font_style: 'H5'
+            pos_hint: {'center_x': 0.73}
+            halign: 'center'
+        MDLabel:
+            id: description
+            text: 'Ясно'
+            font_style: 'H5'
+            pos_hint: {'center_x': 0.5}
+        MDLabel:
+            id: wind
+            text: 'Вітер'
+            pos_hint: {'center_x': 0.5}
+            font_style: 'H5'
+        MDLabel:
+            id: wet 
+            text: 'Вологість'
+            pos_hint: {'center_x': 0.5}
+            font_style: 'H5'
+
+
+
 <MainScr>:
     MDBoxLayout:
         size_hint: (1,1)
@@ -8,35 +58,41 @@
             title: 'Weather.app'
             shadow_color: ("white")
             md_bg_color: ("#87CEFA")
-            
         MDBoxLayout:
-            padding: '20sp'
+            size_hint: (1,0.8)
+            orientation: 'vertical'
             spacing: '10sp'
-            
-            MDTextField:
-                id: find_city
-                hint_text: "Напишіть своє місто"
-                mode: "rectangle"
-                icon_left: "map-marker"
-                radius: [10, 10, 10, 10]
-                pos_hint: {'center_y': 0.9}
+            pos_hint: {'center_x': 0.5}
+            padding: '25sp'
+            padding: [0, '30sp', 0,0]
+            MDBoxLayout:
+                padding: '20sp'
+                spacing: '10sp'
+                size_hint: (1, None)
+                height: '120sp'
                 
-            MDFloatingActionButton:
-                id: show
-                icon: "cloud"
-                md_bg_color: ("#87CEFA")
-                pos_hint: {'center_y': 0.88}
-                shadow_color: ("white")
-                on_press: root.searching()
+                MDTextField:
+                    id: find_city
+                    hint_text: "Напишіть своє місто"
+                    mode: "rectangle"
+                    icon_left: "map-marker"
+                    radius: [10, 10, 10, 10]
+                    pos_hint: {'center_y': 0.9}
+                    
+                MDFloatingActionButton:
+                    id: show
+                    icon: "cloud"
+                    md_bg_color: ("#87CEFA")
+                    pos_hint: {'center_y': 0.84}
+                    shadow_color: ("white")
+                    on_press: root.searching()        
+            MDCarousel:
+                id: carousel
+                direction: 'right'
+                size_hint: (1, 0.5)
+              
+                    
+                    
 
-
-                
-
-        
-        MDLabel:
-            id: content
-            text: 'Content'
-            halign: 'center'
-        
 
                 
